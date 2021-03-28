@@ -67,28 +67,21 @@ function runEnter() {
 
   console.log(filteredData);
 
-  // BONUS: Calculate summary statistics for the age field of the filtered data
+  //Select the table body element
+  var sightingsTable = d3.select(".table.table-striped>tbody");
+  // Remove any children from the table to
+  sightingsTable.html("");
+  
+  //For each element in filteredData, append a row to the table body
+  filteredData.forEach( (row) => { 
+    let table_row = sightingsTable.append("tr");
+    table_row.append("td").text(row.datetime); 
+    table_row.append("td").text(row.city); 
+    table_row.append("td").text(row.state); 
+    table_row.append("td").text(row.country); 
+    table_row.append("td").text(row.shape); 
+    table_row.append("td").text(row.durationMinutes); 
+    table_row.append("td").text(row.comments); 
+  });
 
-  // First, create an array with just the age values
-  //var ages = filteredData.map(person => person.age);
-
-  // Next, use math.js to calculate the mean, median, mode, var, and std of the ages
-  // var mean = math.mean(ages);
-  // var median = math.median(ages);
-  // var mode = math.mode(ages);
-  // var variance = math.variance(ages);
-  // var standardDeviation = math.std(ages);
-
-  // Then, select the unordered list element by class name
-  //var list = d3.select(".summary");
-
-  // remove any children from the list to
-  //list.html("");
-
-  // append stats to the list
-  //list.append("li").text(`Mean: ${mean}`);
-  // list.append("li").text(`Median: ${median}`);
-  // list.append("li").text(`Mode: ${mode}`);
-  // list.append("li").text(`Variance: ${variance}`);
-  // list.append("li").text(`Standard Deviation: ${standardDeviation}`);
 };
