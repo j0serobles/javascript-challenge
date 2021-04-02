@@ -39,27 +39,14 @@ function runEnter() {
     
     //Convert date strings to date type objects so comparison can be done.
     //Start by converting the sighting datetime to a Date object.
-    var sightingDateArray = sighting.datetime.split("/");
-    var sightingMonth     = parseInt(sightingDateArray[0]) - 1;
-    var sightingDay       = sightingDateArray[1];
-    var sightingYear      = sightingDateArray[2];
-    var sightingDate      = new Date( sightingYear, sightingMonth, sightingDay);
 
-    var searchStartDateArray   = searchStartStr.split("/");
-    var searchStartMonth       = parseInt(searchStartDateArray[0]) - 1;
-    var searchStartDay         = searchStartDateArray[1];
-    var searchStartYear        = searchStartDateArray[2];
-    var searchStartDate        = new Date( searchStartYear, searchStartMonth, searchStartDay);
+    var sightingDate      = toDate(sighting.datetime)
+    var searchStartDate   = toDate(searchStartStr);
+    var searchEndDate     = toDate(searchEndStr);
     
-    var searchEndDateArray   = searchEndStr.split("/");
-    var searchEndMonth       = parseInt(searchEndDateArray[0]) - 1;
-    var searchEndDay         = searchEndDateArray[1];
-    var searchEndYear        = searchEndDateArray[2];
-    var searchEndDate        = new Date( searchEndYear, searchEndMonth, searchEndDay);
-    
-    // console.log(sightingDate);
-    // console.log(searchStartDate);
-    // console.log(searchEndDate);
+     console.log(sightingDate);
+     console.log(searchStartDate);
+     console.log(searchEndDate);
     
     return( (sightingDate >= searchStartDate) && (sightingDate <= searchEndDate) ); 
 
@@ -85,3 +72,13 @@ function runEnter() {
   });
 
 };
+
+// Utility Function
+function toDate( dateString ){
+    let sightingDateArray = dateString.split("/");
+    let sightingMonth     = parseInt(sightingDateArray[0]) - 1;
+    let sightingDay       = sightingDateArray[1];
+    let sightingYear      = sightingDateArray[2];
+    let sightingDate      = new Date( sightingYear, sightingMonth, sightingDay);
+    return sightingDate; 
+}

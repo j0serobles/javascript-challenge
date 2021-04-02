@@ -10,21 +10,24 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.1.0/math.min.js"></script>
+  <style>
+    #ufoimg { width:auto; height:auto;}
+  </style>
 </head>
 
 <body>
   <div class="container">
 
-    <div class="row justify-content-center">
-      <div class="col-md-4">
-         <img src="https://media.giphy.com/media/xT9IgEx8SbQ0teblUQ/giphy.gif">
+    <div class="row">
+      <div class="col justify-content-center">
+
+         <img id="ufoimg" class="d-block m-auto" src="https://media.giphy.com/media/xT9IgEx8SbQ0teblUQ/giphy.gif">
+
       </div>
     </div>
 
-    <br>
-
     <div class="row">
-      <div class="col-md">
+      <div class="col">
         <div class="d-flex justify-content-center">
           <h2>Search Our UFO Sightings Database</h2>
         </div>
@@ -32,16 +35,22 @@
     </div>
 
     <form id="form">
-
-      <div class="mb-3">
+      
+      <div class="row">
+        <div class="col">
+          <div class="mb-3">
             <label for="search-start-date">Sighting Date Start:</label>
             <input class="form-control" id="sighting-date-start" name="search-start-date" type="text" placeholder="MM/DD/YYYY">
-      </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label for="search-end-date">Sighting Date End:</label>
+            <input class="form-control" id="sighting-date-end" name="search-end-date" type="text" placeholder="MM/DD/YYYY">
+          </div>
+        </div>
 
-      <div class="mb-3">
-        <label for="search-end-date">Sighting Date End:</label>
-        <input class="form-control" id="sighting-date-end" name="search-end-date" type="text" placeholder="MM/DD/YYYY">
-      </div>
+    </div>
 
       <button type="submit" id="submitButton" class="btn btn-primary">Search</button>
     
