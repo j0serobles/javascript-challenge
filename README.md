@@ -12,7 +12,7 @@ You can handle this... right? The planet Earth needs to know what we have found!
 
 ## UFO-Level-1 Challenge: Automatic Table and Date Search (Required)
 
-![UFO-Level-1 page snapshot](./images/ufo-level-1_page.GIF)
+![UFO-Level-1 page snapshot](./images/ufo-level-1_page.gif)
 
   This is a basic HTML page that displays a table with columns  `date/time`, `city`, `state`, `country`, `shape`, and `comment`.  The table allows for filtering the table's records by sighting date. 
   
